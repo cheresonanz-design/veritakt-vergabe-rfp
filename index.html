@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MarginProof TenderOS — Ausschreibungs-Go/No-Go &amp; RFP-Compliance (Bau &amp; IT-KMU)</title>
+  <meta name="description" content="Deterministische Ausschreibungs-Vorprüfung (VOB/A, UVgO, B2B-RFPs): Ausschlusskriterien, Pflichtnachweise &amp; Angebots-Kalkulation lokal." />
+  <link rel="canonical" href="https://cheresonanz-design.github.io/veritakt-vergabe-rfp/" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MarginProof TenderOS", "applicationCategory": "BusinessApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "url": "https://cheresonanz-design.github.io/veritakt-vergabe-rfp/"}</script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand-mark" href="index.html"><span>MarginProof TenderOS</span><span class="brand-badge">VOB/A · UVGO · RFP-ENGINE</span></a>
+      <nav class="nav-links" aria-label="Hauptnavigation"><a href="index.html" class="active">Vergabe &amp; RFP</a>
+<a href="go-nogo-scoring/" class="">Go/No-Go</a>
+<a href="pflichtnachweise-check/" class="">Pflichtnachweise</a>
+<a href="angebots-matrix/" class="">Antwort-Matrix</a>
+<a href="pro/" class="">Kit &amp; Rollout</a>
+<a href="legal/" class="">Impressum</a><a href="pro/" class="nav-cta">49 EUR Kit</a></nav>
+    </div>
+  </header>
+  
+  <section class="hero"><div class="container"><h1>Ausschreibungs-, Vergabe- &amp; RFP-Compliance-Engine (100 % lokal)</h1><p>Vermeiden Sie kostspielige Formfehler (§ 16 VOB/A) und zeitraubende Verlust-Ausschreibungen durch sofortiges Go/No-Go-Scoring im Browser.</p></div></section>
+  <main class="container">
+    <div class="card">
+      <div class="btn-row" style="margin-top:0;margin-bottom:14px;">
+        <button type="button" class="btn" id="sample1Btn">Demo: Landes-IT Vergabe (2 Ausschluss-Risiken)</button>
+        <button type="button" class="btn" id="sample2Btn">Demo: Einreichungsreifes VOB-Los</button>
+        <button type="button" class="btn" id="sample3Btn">Demo: SaaS Enterprise RFP</button>
+      </div>
+      <div class="form-grid">
+        <div><label for="profileInput">Ausschreibung / Vergabestelle</label><input type="text" id="profileInput" /></div>
+        <div><label for="modeSelect">Vergabeordnung</label><select id="modeSelect"><option value="it_uvgo">IT / Dienstleistung (UVgO / VgV)</option><option value="bau_vob">Bau &amp; Ausbau (VOB/A)</option><option value="b2b_rfp">Konzern B2B-RFP</option></select></div>
+        <div><label for="toneSelect">Team-Modus</label><select id="toneSelect"><option value="executive">Bid-Manager Checkliste</option><option value="streng">Formale Bieterfrage an Vergabestelle</option></select></div>
+      </div>
+      <div class="btn-row"><button type="button" class="btn btn-primary" id="runCheckBtn">Vergabe Go/No-Go prüfen</button></div>
+    </div>
+
+    <div id="resultCard" class="card hidden">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
+        <h2 id="resultHeadline" style="margin:0;">Ergebnis</h2>
+        <div class="btn-row" style="margin:0;">
+          <button type="button" class="btn btn-primary" id="copyActionBtn">Maßnahmentext kopieren</button>
+          <button type="button" class="btn" id="dlCsvBtn">CSV Export (.csv)</button>
+          <button type="button" class="btn" id="dlJsonBtn">JSON Audit (.json)</button>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-box"><div class="kpi-label">Bid-Readiness</div><div class="kpi-val" id="kpi1Val">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Ausschluss-Risiken</div><div class="kpi-val" id="kpi2Val">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Abgesichertes Bid-Volumen</div><div class="kpi-val" id="kpi3Val">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Jahres-Auftragswert</div><div class="kpi-val" id="kpi4Val">-</div></div>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Position &amp; Kategorie</th><th>Kennzahl</th><th>Effekt</th><th>Status</th><th>Prüfhinweis</th></tr></thead><tbody id="entriesBody"></tbody></table></div>
+      <h3>RFP Compliance-Matrix &amp; Bieterfragen</h3>
+      <textarea id="actionBox" readonly aria-label="Maßnahmentext"></textarea>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="offer-card highlight"><div><span class="badge badge-pass">MP-RFP-01 · 49 EUR</span><h3>MarginProof Complete Bid &amp; Operations Bundle</h3><div class="offer-price">49 EUR</div><p class="muted">Komplettes Operations-, Bid-Marge- &amp; Vergabe-Bundle (Excel + PDFs) sofort über unseren Live MarginProof Payhip Checkout.</p></div><div class="btn-row"><a href="https://payhip.com/b/RHu6N" class="btn btn-primary">49 EUR Kit bestellen</a><a href="pro/" class="btn">Details</a></div></div>
+      <div class="offer-card"><div><span class="badge badge-warn">MP-RFP-ROLLOUT · 3500 EUR</span><h3>MarginProof TenderOS &amp; Bid-Desk Rollout</h3><div class="offer-price">3500 EUR</div><p class="muted">Aufbau Ihrer wiederverwendbaren Angebots- &amp; Nachweisbibliothek inklusive Go/No-Go Scorecard.</p></div><div class="btn-row"><a href="https://buy.stripe.com/fZu6oAfQReQu7Hy0IN24003" class="btn btn-dark">3500 EUR Rollout buchen</a><a href="pro/" class="btn">Umfang</a></div></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p><strong>MarginProof TenderOS</strong> — Deterministische Ausschreibungs-Vorprüfung (VOB/A, UVgO, B2B-RFPs): Ausschlusskriterien, Pflichtnachweise &amp; Angebots-Kalkulation lokal.</p>
+      <p>Che Goncalves Menendez · MarginProof · by VeriTakt Collective (Gewerbe: ImportKlar) · Liegnitzstr. 53A, 28237 Bremen, Deutschland · Umsatzsteuerbefreit gemäß § 19 UStG (Kleinunternehmerregelung)</p>
+      <p><a href="legal/">Impressum &amp; DSGVO</a> · <a href="pro/">49 EUR Kit &amp; 3500 EUR Rollout</a> · <a href="https://cheresonanz-design.github.io/opskanon-directory/" target="_blank" rel="noopener">Gelistet auf OpsKanon</a></p>
+    </div>
+  </footer>
+  <script src="assets/vergabe_rfp_engine.js"></script><script src="assets/app.js"></script>
+</body>
+</html>

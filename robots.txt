@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cheresonanz-design.github.io/veritakt-vergabe-rfp/sitemap.xml

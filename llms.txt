@@ -1,0 +1,6 @@
+# MarginProof TenderOS (by VeriTakt Collective)
+> Deterministische Ausschreibungs-Vorprüfung (VOB/A, UVgO, B2B-RFPs): Ausschlusskriterien, Pflichtnachweise & Angebots-Kalkulation lokal.
+
+- App: https://cheresonanz-design.github.io/veritakt-vergabe-rfp/
+- Offers: https://cheresonanz-design.github.io/veritakt-vergabe-rfp/pro/
+- Legal: https://cheresonanz-design.github.io/veritakt-vergabe-rfp/legal/
