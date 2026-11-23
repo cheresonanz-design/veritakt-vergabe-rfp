@@ -35,7 +35,29 @@
         <div><label for="modeSelect">Vergabeordnung</label><select id="modeSelect"><option value="it_uvgo">IT / Dienstleistung (UVgO / VgV)</option><option value="bau_vob">Bau &amp; Ausbau (VOB/A)</option><option value="b2b_rfp">Konzern B2B-RFP</option></select></div>
         <div><label for="toneSelect">Team-Modus</label><select id="toneSelect"><option value="executive">Bid-Manager Checkliste</option><option value="streng">Formale Bieterfrage an Vergabestelle</option></select></div>
       </div>
-      <div class="btn-row"><button type="button" class="btn btn-primary" id="runCheckBtn">Vergabe Go/No-Go prüfen</button></div>
+      <div class="divider-top">
+        <div style="font-size:0.86rem;font-weight:700;margin-bottom:8px;">Eigene Position hinzufügen (100 % lokal im Browser)</div>
+        <div class="inline-grid">
+          <div><label for="posIdInput">Pos-ID</label><input type="text" id="posIdInput" placeholder="z. B. POS-04" /></div>
+          <div><label for="posLabelInput">Bezeichnung / Position</label><input type="text" id="posLabelInput" placeholder="Eigene Position eingeben..." /></div>
+          <div><label for="posCategoryInput">Kategorie</label><input type="text" id="posCategoryInput" placeholder="z. B. Prüfung / Risiko" /></div>
+          <div><label for="posMetricInput">Kennzahl</label><input type="number" id="posMetricInput" step="0.01" value="80" /></div>
+          <div><label for="posImpactInput">Effekt (EUR)</label><input type="number" id="posImpactInput" step="0.01" value="0" /></div>
+          <div><label for="posStatusSelect">Status</label><select id="posStatusSelect"><option value="AUTO">Automatik</option><option value="PASS">PASS</option><option value="WARN">WARN</option><option value="FAIL">FAIL</option></select></div>
+          <div><label for="posNoteInput">Prüfhinweis</label><input type="text" id="posNoteInput" placeholder="Kurzer Hinweis oder Maßnahme" /></div>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn btn-primary" id="runCheckBtn">Vergabe Go/No-Go prüfen</button>
+          <button type="button" class="btn" id="addItemBtn">+ Position hinzufügen</button>
+          <button type="button" class="btn" id="clearItemsBtn">Positionen leeren</button>
+        </div>
+        <details style="margin-top:12px;">
+          <summary style="cursor:pointer;font-size:0.86rem;font-weight:700;color:var(--slate-500);">CSV / Semikolon-Stapelimport &amp; Direktbearbeitung</summary>
+          <p class="muted" style="margin:6px 0 8px;">Format: <code>ID;Kategorie;Position;Kennzahl;Effekt_EUR;Status;Hinweis</code> (Semikolon oder Komma, lokal im Browser verarbeitet).</p>
+          <textarea id="batchCsvInput" aria-label="CSV Stapelimport"></textarea>
+          <div class="btn-row"><button type="button" class="btn" id="applyCsvBtn">CSV übernehmen &amp; prüfen</button></div>
+        </details>
+      </div>
     </div>
 
     <div id="resultCard" class="card hidden">
@@ -53,7 +75,7 @@
         <div class="kpi-box"><div class="kpi-label">Abgesichertes Bid-Volumen</div><div class="kpi-val" id="kpi3Val">-</div></div>
         <div class="kpi-box"><div class="kpi-label">Jahres-Auftragswert</div><div class="kpi-val" id="kpi4Val">-</div></div>
       </div>
-      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Position &amp; Kategorie</th><th>Kennzahl</th><th>Effekt</th><th>Status</th><th>Prüfhinweis</th></tr></thead><tbody id="entriesBody"></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Position &amp; Kategorie</th><th>Kennzahl</th><th>Effekt</th><th>Status</th><th>Prüfhinweis</th><th>Aktion</th></tr></thead><tbody id="entriesBody"></tbody></table></div>
       <h3>RFP Compliance-Matrix &amp; Bieterfragen</h3>
       <textarea id="actionBox" readonly aria-label="Maßnahmentext"></textarea>
     </div>
