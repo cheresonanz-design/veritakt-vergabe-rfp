@@ -12,17 +12,17 @@
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand-mark" href="index.html"><span>MarginProof TenderOS</span><span class="brand-badge">VOB/A · UVGO · RFP-ENGINE</span></a>
+      <a class="brand-mark" href="index.html"><span>MarginProof TenderOS</span><span class="brand-badge">PRAXIS-PROTOTYP · 0 EUR</span></a>
       <nav class="nav-links" aria-label="Hauptnavigation"><a href="index.html" class="active">Vergabe &amp; RFP</a>
 <a href="go-nogo-scoring/" class="">Go/No-Go</a>
 <a href="pflichtnachweise-check/" class="">Pflichtnachweise</a>
 <a href="angebots-matrix/" class="">Antwort-Matrix</a>
-<a href="pro/" class="">Kit &amp; Rollout</a>
-<a href="legal/" class="">Impressum</a><a href="pro/" class="nav-cta">49 EUR Kit</a></nav>
+<a href="pro/" class="">Prototyp &amp; Pilot</a>
+<a href="legal/" class="">Impressum</a><a href="pro/" class="nav-cta">Pilot-Anfrage</a></nav>
     </div>
   </header>
   
-  <section class="hero"><div class="container"><h1>Ausschreibungs-, Vergabe- &amp; RFP-Compliance-Engine (100 % lokal)</h1><p>Vermeiden Sie kostspielige Formfehler (§ 16 VOB/A) und zeitraubende Verlust-Ausschreibungen durch sofortiges Go/No-Go-Scoring im Browser.</p></div></section>
+  <section class="hero"><div class="container"><span class="brand-badge" style="margin-bottom:8px;display:inline-block;">PRAXIS-PROTOTYP · 0 EUR · KEIN PAYHIP-PRODUKT</span><h1>Ausschreibungs-, Vergabe- &amp; RFP-Compliance-Engine (100 % lokal)</h1><p>Vermeiden Sie kostspielige Formfehler (§ 16 VOB/A) und zeitraubende Verlust-Ausschreibungen durch sofortiges Go/No-Go-Scoring im Browser.</p></div></section>
   <main class="container">
     <div class="card">
       <div class="btn-row" style="margin-top:0;margin-bottom:14px;">
@@ -35,29 +35,7 @@
         <div><label for="modeSelect">Vergabeordnung</label><select id="modeSelect"><option value="it_uvgo">IT / Dienstleistung (UVgO / VgV)</option><option value="bau_vob">Bau &amp; Ausbau (VOB/A)</option><option value="b2b_rfp">Konzern B2B-RFP</option></select></div>
         <div><label for="toneSelect">Team-Modus</label><select id="toneSelect"><option value="executive">Bid-Manager Checkliste</option><option value="streng">Formale Bieterfrage an Vergabestelle</option></select></div>
       </div>
-      <div class="divider-top">
-        <div style="font-size:0.86rem;font-weight:700;margin-bottom:8px;">Eigene Position hinzufügen (100 % lokal im Browser)</div>
-        <div class="inline-grid">
-          <div><label for="posIdInput">Pos-ID</label><input type="text" id="posIdInput" placeholder="z. B. POS-04" /></div>
-          <div><label for="posLabelInput">Bezeichnung / Position</label><input type="text" id="posLabelInput" placeholder="Eigene Position eingeben..." /></div>
-          <div><label for="posCategoryInput">Kategorie</label><input type="text" id="posCategoryInput" placeholder="z. B. Prüfung / Risiko" /></div>
-          <div><label for="posMetricInput">Kennzahl</label><input type="number" id="posMetricInput" step="0.01" value="80" /></div>
-          <div><label for="posImpactInput">Effekt (EUR)</label><input type="number" id="posImpactInput" step="0.01" value="0" /></div>
-          <div><label for="posStatusSelect">Status</label><select id="posStatusSelect"><option value="AUTO">Automatik</option><option value="PASS">PASS</option><option value="WARN">WARN</option><option value="FAIL">FAIL</option></select></div>
-          <div><label for="posNoteInput">Prüfhinweis</label><input type="text" id="posNoteInput" placeholder="Kurzer Hinweis oder Maßnahme" /></div>
-        </div>
-        <div class="btn-row">
-          <button type="button" class="btn btn-primary" id="runCheckBtn">Vergabe Go/No-Go prüfen</button>
-          <button type="button" class="btn" id="addItemBtn">+ Position hinzufügen</button>
-          <button type="button" class="btn" id="clearItemsBtn">Positionen leeren</button>
-        </div>
-        <details style="margin-top:12px;">
-          <summary style="cursor:pointer;font-size:0.86rem;font-weight:700;color:var(--slate-500);">CSV / Semikolon-Stapelimport &amp; Direktbearbeitung</summary>
-          <p class="muted" style="margin:6px 0 8px;">Format: <code>ID;Kategorie;Position;Kennzahl;Effekt_EUR;Status;Hinweis</code> (Semikolon oder Komma, lokal im Browser verarbeitet).</p>
-          <textarea id="batchCsvInput" aria-label="CSV Stapelimport"></textarea>
-          <div class="btn-row"><button type="button" class="btn" id="applyCsvBtn">CSV übernehmen &amp; prüfen</button></div>
-        </details>
-      </div>
+      <div class="btn-row"><button type="button" class="btn btn-primary" id="runCheckBtn">Vergabe Go/No-Go prüfen</button></div>
     </div>
 
     <div id="resultCard" class="card hidden">
@@ -75,22 +53,21 @@
         <div class="kpi-box"><div class="kpi-label">Abgesichertes Bid-Volumen</div><div class="kpi-val" id="kpi3Val">-</div></div>
         <div class="kpi-box"><div class="kpi-label">Jahres-Auftragswert</div><div class="kpi-val" id="kpi4Val">-</div></div>
       </div>
-      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Position &amp; Kategorie</th><th>Kennzahl</th><th>Effekt</th><th>Status</th><th>Prüfhinweis</th><th>Aktion</th></tr></thead><tbody id="entriesBody"></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Position &amp; Kategorie</th><th>Kennzahl</th><th>Effekt</th><th>Status</th><th>Prüfhinweis</th></tr></thead><tbody id="entriesBody"></tbody></table></div>
       <h3>RFP Compliance-Matrix &amp; Bieterfragen</h3>
       <textarea id="actionBox" readonly aria-label="Maßnahmentext"></textarea>
     </div>
 
     <div class="pricing-grid">
-      <div class="offer-card highlight"><div><span class="badge badge-pass">MP-RFP-01 · 49 EUR</span><h3>MarginProof Complete Bid &amp; Operations Bundle</h3><div class="offer-price">49 EUR</div><p class="muted">Komplettes Operations-, Bid-Marge- &amp; Vergabe-Bundle (Excel + PDFs) sofort über unseren Live MarginProof Payhip Checkout.</p></div><div class="btn-row"><a href="mailto:che.resonanz@gmail.com?subject=Bestellung%20MarginProof%20Complete%20Bid%20%26%20Operations%20Bundle%20%2849%20EUR%29" class="btn btn-primary">49 EUR Kit bestellen</a><a href="pro/" class="btn">Details</a></div></div>
-      <div class="offer-card"><div><span class="badge badge-warn">MP-RFP-ROLLOUT · 3500 EUR</span><h3>MarginProof TenderOS &amp; Bid-Desk Rollout</h3><div class="offer-price">3500 EUR</div><p class="muted">Aufbau Ihrer wiederverwendbaren Angebots- &amp; Nachweisbibliothek inklusive Go/No-Go Scorecard.</p></div><div class="btn-row"><a href="mailto:che.resonanz@gmail.com?subject=Anfrage%20MarginProof%20TenderOS%20%26%20Bid-Desk%20Rollout%20%283500%20EUR%29" class="btn btn-dark">3500 EUR Rollout buchen</a><a href="pro/" class="btn">Umfang</a></div></div>
+      <div class="offer-card highlight"><div><span class="badge badge-pass">0 EUR PROTOTYP · LOKAL</span><h3>Kostenloser Browser-Prototyp</h3><div class="offer-price">0 EUR</div><p class="muted">Demo-Szenarien lokal testen, kein Payhip-Produkt, kein Cloud-Upload und keine automatische Bezahlfunktion.</p></div><div class="btn-row"><a href="#top" class="btn btn-primary">Jetzt im Browser testen</a><a href="pro/" class="btn">Status &amp; Hinweise</a></div></div>
+      <div class="offer-card"><div><span class="badge badge-warn">INDIVIDUELLE ANFRAGE · B2B</span><h3>Individuelles B2B-Pilotprojekt auf Anfrage</h3><div class="offer-price">Auf Anfrage</div><p class="muted">Unverbindliche Vorabanfrage per E-Mail an che.resonanz@gmail.com zur Anpassung an Ihren Anwendungsfall (§ 19 UStG).</p></div><div class="btn-row"><a href="mailto:che.resonanz@gmail.com?subject=Unverbindliche%20B2B-Pilotanfrage%3A%20MarginProof%20TenderOS" class="btn btn-dark">Pilot-Anfrage per E-Mail</a><a href="pro/" class="btn">Details</a></div></div>
     </div>
   </main>
   <footer class="footer">
     <div class="container">
-      <p><strong>MarginProof TenderOS</strong> — Deterministische Ausschreibungs-Vorprüfung (VOB/A, UVgO, B2B-RFPs): Ausschlusskriterien, Pflichtnachweise &amp; Angebots-Kalkulation lokal.</p>
+      <p><strong>MarginProof TenderOS (Interaktiver Praxis-Prototyp · 0 EUR)</strong> — Deterministische Ausschreibungs-Vorprüfung (VOB/A, UVgO, B2B-RFPs): Ausschlusskriterien, Pflichtnachweise &amp; Angebots-Kalkulation lokal.</p>
       <p>Che Goncalves Menendez · MarginProof · by VeriTakt Collective (Gewerbe: ImportKlar) · Liegnitzstr. 53A, 28237 Bremen, Deutschland · Umsatzsteuerbefreit gemäß § 19 UStG (Kleinunternehmerregelung)</p>
-      <p>Hinweis: Orientierungshilfe mit Beispieldaten, keine Rechts-, Steuer-, Medizin- oder Versicherungsberatung und keine Garantie auf Richtigkeit. Bestellungen und Anfragen bearbeite ich persönlich per E-Mail.</p>
-      <p><a href="legal/">Impressum &amp; DSGVO</a> · <a href="pro/">49 EUR Kit &amp; 3500 EUR Rollout</a> · <a href="https://cheresonanz-design.github.io/opskanon-directory/" target="_blank" rel="noopener">Gelistet auf OpsKanon</a></p>
+      <p><a href="legal/">Impressum &amp; DSGVO</a> · <a href="pro/">Pilot-Anfrage (E-Mail)</a> · <a href="https://cheresonanz-design.github.io/opskanon-directory/" target="_blank" rel="noopener">Gelistet auf OpsKanon</a></p>
     </div>
   </footer>
   <script src="assets/vergabe_rfp_engine.js"></script><script src="assets/app.js"></script>

@@ -50,7 +50,3 @@ th { background: #f1f5f9; font-size: 0.8rem; text-transform: uppercase; }
 .footer a { color: #ddd6fe; }
 .muted { color: var(--slate-500); font-size: 0.88rem; }
 .hidden { display: none !important; }
-input[type="number"] { width: 100%; padding: 9px 11px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.92rem; background: #f8fafc; font-family: inherit; }
-.divider-top { border-top: 1px solid var(--border); margin-top: 16px; padding-top: 14px; }
-.inline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
-.btn-sm { padding: 4px 9px; font-size: 0.8rem; }
